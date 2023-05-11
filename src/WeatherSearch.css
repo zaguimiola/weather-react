@@ -1,0 +1,91 @@
+.WeatherSearch h1 {
+  color: #272142;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 20px 0 10px;
+}
+
+.WeatherSearch ul {
+  margin: 0;
+  padding: 0;
+}
+
+.WeatherSearch li {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.WeatherSearch {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  color: #878787;
+  padding: 40px;
+}
+
+.WeatherSearch .search-form {
+  border-bottom: 1px solid #f9f7fe;
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+
+.WeatherSearch .search-input {
+  background: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  color: rgba(39, 33, 66, 0.4);
+  display: inline-block;
+  font-size: 16px;
+  height: 50px;
+  line-height: 20px;
+  padding: 15px 20px;
+}
+
+.WeatherSearch .btn {
+  background: #885df1;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  height: 50px;
+  padding: 15px 0;
+}
+
+.WeatherSearch .weather-info {
+  margin-top: 20px;
+}
+
+.WeatherSearch .humidity-wind {
+  color: #f65282;
+  font-weight: 400;
+}
+
+.WeatherSearch .temperature-container {
+  align-items: center;
+  margin-top: 30px;
+}
+
+.WeatherSearch .temperature-unit {
+  margin-top: 40px;
+}
+
+.WeatherSearch .temperature {
+  color: #212121;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 10px;
+}
+
+.WeatherSearch .unit {
+  color: #212121;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  position: relative;
+  top: -34px;
+}
