@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 import "./WeatherSearch.css";
@@ -12,7 +13,7 @@ export default function WeatherSearch(props) {
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      date: ``,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
@@ -65,8 +66,10 @@ export default function WeatherSearch(props) {
               <h1>{weatherData.city}</h1>
               <ul>
                 <li>
-                  <span>{weatherData.date}</span>,{" "}
-                  <span>{weatherData.description}</span>
+                  <span>
+                    <FormattedDate date={weatherData.date} />
+                  </span>
+                  , <span>{weatherData.description}</span>
                 </li>
                 <li>
                   Humidity:
