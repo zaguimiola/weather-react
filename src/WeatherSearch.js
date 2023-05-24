@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 
 import "./WeatherSearch.css";
@@ -15,7 +16,7 @@ export default function WeatherSearch(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
     });
@@ -47,7 +48,6 @@ export default function WeatherSearch(props) {
                 type="search"
                 placeholder="Enter a city..."
                 className="form-control search-input"
-                id="city-input"
                 onChange={updateCity}
               />
             </div>
@@ -60,43 +60,7 @@ export default function WeatherSearch(props) {
             </div>
           </div>
         </form>
-        <div className="weather-info">
-          <div className="row">
-            <div className="col-6">
-              <h1>{weatherData.city}</h1>
-              <ul>
-                <li>
-                  <span>
-                    <FormattedDate date={weatherData.date} />
-                  </span>
-                  , <span>{weatherData.description}</span>
-                </li>
-                <li>
-                  Humidity:
-                  <span className="humidity-wind">
-                    <strong> {weatherData.humidity}</strong>%{" "}
-                  </span>
-                  , Wind:
-                  <span className="humidity-wind">
-                    <strong> {Math.round(weatherData.wind)}</strong>
-                    <span> km/h</span>
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-8 d-flex justify-content-end">
-              <div className="temperature-container">
-                <img src={weatherData.icon} alt={weatherData.description} />
-              </div>
-              <div className="temperature-unit">
-                <span className="temperature">
-                  {Math.round(weatherData.temperature)}
-                </span>
-                <span className="unit">ºC</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
