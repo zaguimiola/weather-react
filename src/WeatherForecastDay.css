@@ -1,0 +1,23 @@
+.WeatherForecastDay .day {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.WeatherForecastDay .icon {
+  margin: 15px 15px;
+}
+
+.WeatherForecastDay .temperature {
+  color: #f65282;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.WeatherForecastDay .temperature-min {
+  margin-left: 10px;
+  opacity: 0.6;
+}
